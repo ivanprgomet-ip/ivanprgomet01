@@ -1,0 +1,295 @@
+﻿/*#region meyerwebb CSS-Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*#endregion */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,900);
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+/*#region --------- GENERALITIES ---------  */
+
+/*#region global font-size setters */
+@media (min-width: 38em) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 48em) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 58em) {
+    html {
+        font-size: 20px;
+    }
+}
+/*#endregion */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    font-family:Roboto;
+    font-weight:300;
+}
+body {
+    color: #515151;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+a {
+    text-decoration: none;
+}
+ul, ol, dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+p {
+    margin-bottom: 1rem;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-weight: bold;
+    /*line-height: 1.25;*/
+    /*color: #313131;*/
+    color: #202020; /*same as sidebar backgroundcolor*/
+    text-rendering: optimizeLegibility;
+}
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
+h4, h5, h6 {
+    font-size: 1rem;
+}
+
+.container {
+    max-width: 38rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.active{
+    font-weight:bold;
+}
+.highlighter-blue{
+    color:#75b5aa;
+}
+.highlighter-green{
+    color:#6a9fb5;
+}
+.highlighter-purple{
+    color: #aa759f;
+}
+
+/*#endregion */
+
+/*#region --------- SIDEBAR --------- */
+.sidebar{
+    text-align: center;
+    padding: 2rem 1rem;
+    color: rgba(255,255,255,.5); /*greyish*/
+    background-color: #202020;/*blackish*/
+}
+@media (min-width: 48em) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 18rem;
+        text-align: left;
+    }
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+}
+.sidebar a:hover {
+        color: inherit;
+    }
+
+
+.sidebar li{
+    line-height:1.5rem;
+}
+
+.sidebar header h1 {
+    color: #fff;
+    margin-top: 0;
+    font-size: 3.25rem;
+}
+.sidebar header .image img {
+    border-radius: 100%;
+    width: 80%;
+}
+.sidebar header .image {
+    border-radius: 0.35em;
+    border: 0;
+    display: inline-block;
+    position: relative;
+    margin: 0 0 1em 0;
+    width: 6.25em;
+}
+
+footer .icon-text {
+    position: relative; /*neccessary for font-awesome to work*/
+}
+footer .fa {
+    text-decoration: none;
+    color: #6a9fb5;
+}
+footer .icon-text:before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+}
+footer .icons {
+    display: flex;
+    justify-content: space-between;
+}
+footer .icons a {
+        background-color: #fff;
+        display: inline-block;
+        border: 2px solid #fff;
+        border-radius: 100%;
+        text-align: center;
+        width: 2.5em;
+        height: 2.5em;
+        line-height: 2.5em;
+        font-size: medium;
+        color: black;
+    }
+footer .icons a:hover {
+    background-color: rgba(255, 255, 255, 0.00); /*transparent*/
+    border-color: inherit; /*greyish*/
+    color: inherit; /*greyish*/
+}
+footer .copyright {
+    font-size: 0.8em;
+}
+
+/*some space between elements in sidebar */
+    .sidebar header,
+    .sidebar nav,
+    .sidebar footer{
+        padding-top:5px;
+        padding-bottom:10px;
+    }
+/*#endregion */
+
+/*#region --------- MAIN --------- */
+
+/* default article in .main*/
+.main article{
+    line-height:1.75rem;
+    font-weight:400;
+    margin-bottom: 2rem;
+}
+
+.main article.resumé{
+    font-family:Arial, Helvetica, sans-serif;
+    display:flex;
+    flex-direction:row;
+}
+
+.main article.resumé aside div,
+.main article.resumé article div
+{
+    margin-bottom:1.25rem;
+    padding-right: 2rem;
+}
+@media (max-width: 38em){
+    .main article.resumé{
+        flex-direction:column;
+    }
+}
+
+
+
+
+.content {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+@media (min-width: 48em) {
+    .content {
+        max-width: 38rem;
+        margin-left: 20rem;
+        margin-right: 2rem;
+    }
+}
+@media (min-width: 64em) {
+    .content {
+        margin-left: 20rem;
+        margin-right: 4rem;
+    }
+}
+
+/*#endregion */
